@@ -156,18 +156,21 @@ void pattern15(int n){
         }
         cout<<endl;
     }
-    for (int k=0; k<n; k++){
-        for(int j=0; j<k; j++){
+    for (int i=0; i<n; i++){
+        for(int j=0; j<i; j++){
             cout << " ";
         }
-        for(int j=0; j< 2*n -(2*k+1); j++){
+        for(int j=0; j< 2*n -(2*i+1); j++){
             cout << "*";
         }
-        for(int j=0; j<k; j++){
+        for(int j=0; j<i; j++){
             cout << " ";
         }
         cout<<endl;
     }
+}
+void pattern16(int n){
+    
 }
 int main(){
     int n;
