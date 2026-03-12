@@ -170,11 +170,22 @@ void pattern15(int n){
     }
 }
 void pattern16(int n){
-    
+    for(int i =0 ; i<n ; i++){
+        for(int j=0;j<i+1;j++){
+            cout<< "*";
+        }
+        cout<<endl;
+    }
+    for(int i =0 ; i<n ; i++){
+        for(int j=0;j<n-(i+1);j++){
+            cout<< "*";
+        }
+        cout<<endl;
+    }
 }
 int main(){
     int n;
     cout << " Enter the number of lines for the Pattern :";
     cin>>n;
-    pattern15(n);
+    pattern16(n);
 }
