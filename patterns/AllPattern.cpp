@@ -117,12 +117,15 @@ void pattern12(int n){
 }
 void pattern13(int n){
     for (int i=0; i<n; i++){
+        //spaces
         for(int j=0; j<n-i-1; j++){
             cout << " ";
         }
+        //stars
         for(int j=0; j<2*i+1; j++){
             cout << "*";
         }
+        //spaces
         for(int j=0; j<n-i-1; j++){
             cout << " ";
         }
@@ -131,12 +134,15 @@ void pattern13(int n){
 }
 void pattern14(int n){
     for (int i=0; i<n; i++){
+        //spaces
         for(int j=0; j<i; j++){
             cout << " ";
         }
+        //stars
         for(int j=0; j< 2*n -(2*i+1); j++){
             cout << "*";
         }
+        //numbers
         for(int j=0; j<i; j++){
             cout << " ";
         }
@@ -145,12 +151,15 @@ void pattern14(int n){
 }
 void pattern15(int n){
     for (int i=0; i<n; i++){
+        //spaces
         for(int j=0; j<n-i-1; j++){
             cout << " ";
         }
+        //stars
         for(int j=0; j<2*i+1; j++){
             cout << "*";
         }
+        //spaces
         for(int j=0; j<n-i-1; j++){
             cout << " ";
         }
