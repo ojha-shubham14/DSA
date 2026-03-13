@@ -204,4 +204,5 @@ int main(){
     cout << " Enter the number of lines for the Pattern :";
     cin>>n;
     pattern17(n);
+    cout<<"yaay learnt new pattern";
 }
