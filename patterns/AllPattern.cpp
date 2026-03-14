@@ -237,9 +237,30 @@ void pattern19(int n){
         cout<<endl;
     }
 }
+void pattern20(int n){ // this is done by me purely and the happiness after solving in one go without being dependent on anyone else is such a KHUSHI wala moment for me and i know this is very small thing but still in the stating of the coding journey ye karne se kitna accha lagta haiiiii
+    for(int i = 0 ; i< n ; i++){
+        char ch = 'A'; // note to keep the char A in this '' not in this ""
+        for(int j = 0 ; j<=i ; j++){
+            cout<<ch<< ' ';
+            ch ++; 
+        }
+        cout << endl;
+    }
+}
+void pattern21(int n){ //maine khud se kara hai , its very small thing but the KHUSHI i get is bery muchhh sir jii
+    for(int i = 0 ; i<n ; i++){
+        char ch = 'A';
+        for(int j = n ; j>i ; j--){
+            cout<<ch<<" ";
+            ch++;
+        }
+        cout<<endl;
+    }
+}
+
 int main(){
     int n;
     cout << " Enter the number of lines for the Pattern :";
     cin>>n;
-    pattern19(n);
+    pattern21(n);
 }
