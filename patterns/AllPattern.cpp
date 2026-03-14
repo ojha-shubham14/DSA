@@ -227,9 +227,19 @@ void pattern18(int n){
         space -=2;
     } 
 }
+void pattern19(int n){
+    int count = 1; // the variable count is req as the j loop se akele nahi ho paya mere se , so took an extra variable
+    for(int i = 0; i<=n ; i++){
+        for(int j = 0 ; j<=i ; j++){
+            cout<< count << " "; //count is getting printed and the getting incremented in the next line
+            count ++;
+        }
+        cout<<endl;
+    }
+}
 int main(){
     int n;
     cout << " Enter the number of lines for the Pattern :";
     cin>>n;
-    pattern18(n);
+    pattern19(n);
 }
