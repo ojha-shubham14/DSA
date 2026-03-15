@@ -286,10 +286,30 @@ void pattern23(int n){
         cout<<endl;
     }
 }
-
+void pattern24(int n){
+    for (int i=0; i<n; i++){
+        //spaces
+        for(int j=0; j<n-i-1; j++){
+            cout << " ";
+        }
+        //character
+        char ch = 'A';
+        int breakpoint = (2*i+1)/2;
+        for(int j=0; j<2*i+1; j++){
+            cout << ch;
+            if(j<breakpoint)ch++;
+            else ch--;
+        }
+        //numbers
+        for(int j=0; j<i; j++){
+            cout << " ";
+        }
+        cout<<endl;
+    }
+}
 int main(){
     int n;
     cout << " Enter the number of lines for the Pattern :";
     cin>>n;
-    pattern23(n);
+    pattern24(n);
 }
