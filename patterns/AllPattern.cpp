@@ -265,11 +265,31 @@ void pattern22(int n){
         }
         ch++;
         cout<<endl;
-
+    }
+}
+void pattern23(int n){
+    for (int i=0; i<n; i++){
+        char ch = 'A';
+        //spaces
+        for(int j=0; j<n-i-1; j++){
+            cout << " ";
+        }
+        //character
+        for(int j=0; j<2*i+1; j++){
+            cout << ch;
+            ch++;
+        }
+        //numbers
+        for(int j=0; j<i; j++){
+            cout << " ";
+        }
+        cout<<endl;
+    }
+}
 
 int main(){
     int n;
     cout << " Enter the number of lines for the Pattern :";
     cin>>n;
-    pattern22(n);
+    pattern23(n);
 }
