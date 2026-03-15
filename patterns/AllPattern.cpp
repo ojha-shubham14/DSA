@@ -257,10 +257,19 @@ void pattern21(int n){ //maine khud se kara hai , its very small thing but the K
         cout<<endl;
     }
 }
+void pattern22(int n){
+    char ch = 'A'; 
+    for(int i = 0 ; i<n ; i++){
+         for(int j = 0 ; j<=i ; j++){
+            cout<<ch<<" ";
+        }
+        ch++;
+        cout<<endl;
+
 
 int main(){
     int n;
     cout << " Enter the number of lines for the Pattern :";
     cin>>n;
-    pattern21(n);
+    pattern22(n);
 }
