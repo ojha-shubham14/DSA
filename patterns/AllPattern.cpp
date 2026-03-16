@@ -307,9 +307,17 @@ void pattern24(int n){
         cout<<endl;
     }
 }
+void pattern25(int n){
+    for(int i = 0; i<n ; i++){
+        for(char ch = 'E'-i ; ch <='E' ; ch ++){ // look carefully it starts with E-i and ends with E in each line
+            cout<<ch<<" ";
+        }
+        cout << endl;
+    }
+}
 int main(){
     int n;
     cout << " Enter the number of lines for the Pattern :";
     cin>>n;
-    pattern24(n);
+    pattern25(n);
 }
