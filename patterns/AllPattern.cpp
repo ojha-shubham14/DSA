@@ -315,6 +315,14 @@ void pattern25(int n){
         cout << endl;
     }
 }
+void pattern26(int n){
+    for (int i = 0; i<n ; i++){
+        // for stars
+         for(int j = 0 ; j<n  ; j++){
+            
+         }
+    }
+}
 int main(){
     int n;
     cout << " Enter the number of lines for the Pattern :";
