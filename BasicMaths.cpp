@@ -34,10 +34,17 @@ void palindrome(int n){
     else cout << " Is not a palindrome" ;
 }
 void gcd(int n,int m){
+    cout << "Enter the first number : ";
+    cin>> n ;
+    cout << endl << "Enter the second number : ";
+    cin>> m ;
     int hcf = 0;
-    
+    if (n == 0 || m ==0) {
+        cout << "neither of the 2 inputs should be equal to zero" ;
+        return ;
+    }
     for(int i = 1 ; i <= m ; i ++){
-        if(n%i == 0  && m % i == 0){
+        if(n%i == 0  && m % i == 0){ // note that / will not be used and % will be used as we want the factors and it should be exacly divisible
             hcf = i;
         }
     }
@@ -45,10 +52,6 @@ void gcd(int n,int m){
 }
 int main(){
     int n,m;
-    cout << "Enter the first number : ";
-    cin>> n ;
-    cout << endl << "Enter the second number : ";
-    cin>> m ;
     gcd(n,m);
     return 0;
 }
