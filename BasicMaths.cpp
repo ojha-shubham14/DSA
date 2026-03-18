@@ -33,10 +33,20 @@ void palindrome(int n){
     }
     else cout << " Is not a palindrome" ;
 }
+void gcd(int n,int m){
+    int gcd = 0;
+    for(int i = 1 ; i <= m ; i ++){
+        if(n/i  && m / i){
+            gcd = i;
+        }
+    }
+}
 int main(){
-    int n;
-    cout<<"Enter the numbers : " ;
-    cin>>n;
-    palindrome(n);
+    int n,m;
+    cout << "Enter the first number : ";
+    cin>> n ;
+    cout << endl << "Enter the second number : ";
+    cin>> m ;
+    gcd(n,m);
     return 0;
 }
