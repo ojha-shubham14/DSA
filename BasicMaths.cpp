@@ -19,10 +19,25 @@ int reverseNumber(int n){
     cout<< "The reverse of a given number is : "<<reverse;
     return reverse;
 }
+void palindrome(int n){
+    int original = n;
+    int reverse = 0; // dont forget to initialize it to 0 , or else it will take garbage value only. int reverse ; is wrong  
+    int lastdigit = 0 ;
+    while(n>0){
+        lastdigit = n % 10;
+        reverse = (reverse * 10) + lastdigit ;
+        n = n / 10;
+    }
+    cout << reverse << endl;
+    if(reverse == original){
+        cout << "Is a Palindrome " << endl;
+    }
+    else cout << " Is not a palindrome" ;
+}
 int main(){
     int n;
     cout<<"Enter the numbers : " ;
     cin>>n;
-    reverseNumber(n);
+    palindrome(n);
     return 0;
 }
