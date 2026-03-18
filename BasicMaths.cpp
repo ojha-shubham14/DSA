@@ -20,7 +20,7 @@ int reverseNumber(int n){
     return reverse;
 }
 void palindrome(int n){
-    int original = n;
+    int original = n; // we have to initialize a variable with n and in 3rd comment you will find the reason why we need this.  
     int reverse = 0; // dont forget to initialize it to 0 , or else it will take garbage value only. int reverse ; is wrong  
     int lastdigit = 0 ;
     while(n>0){
@@ -28,8 +28,7 @@ void palindrome(int n){
         reverse = (reverse * 10) + lastdigit ;
         n = n / 10;
     }
-    cout << reverse << endl;
-    if(reverse == original){
+    if(reverse == original){ // used original value because after using the while loop the n value would have been changed and its will no longer be the number given by the user.
         cout << "Is a Palindrome " << endl;
     }
     else cout << " Is not a palindrome" ;
