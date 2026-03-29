@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 int countNumbers(int n){
     int count = 0;
@@ -50,8 +51,31 @@ void gcd(int n,int m){
     }
     cout <<"The GCD is : " <<  hcf;
 }
+void armstrong(int n){ //this works only for the input which are 3digits.
+    cout << "Enter number : ";
+    cin>> n ;
+    int original = n;
+    int lastdigit;
+    int sum = 0;
+
+    int digits = 0;
+    int temp = n;
+    while(temp > 0){
+        digits++;
+        temp/= 10;
+    }
+    while(n>0){
+        lastdigit = n % 10;
+        sum = sum + pow(lastdigit,digits); //this will be proper for any number of digits of the input as we are separately counting the digits
+        n = n / 10;
+    }
+    if(sum==original){
+        cout<<"it is a armstrong number";
+    }
+    else cout<<"not a armstrong number";
+}
 int main(){
     int n,m;
-    gcd(n,m);
+    armstrong(n);
     return 0;
 }
