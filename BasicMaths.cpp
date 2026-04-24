@@ -74,8 +74,18 @@ void armstrong(int n){ //this works only for the input which are 3digits.
     }
     else cout<<"not a armstrong number";
 }
+void divisors(int n){
+    cout<< "enter a number to check and return it's divisors : ";
+    cin>>n;
+    for(int i = 1 ; i<=n ; i++){
+        if(n %i==0){
+            cout<<"the divisors of the given integers are :" <<i<<"\n";
+        }
+    }
+
+}
 int main(){
-    int n,m;
-    armstrong(n);
+    int m;
+    divisors(m);
     return 0;
 }
