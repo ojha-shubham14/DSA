@@ -84,8 +84,25 @@ void divisors(int n){
     }
 
 }
+void prime(){
+    cout<<"enter a number to check for prime :";
+    int n;
+    cin>> n;
+    int count = 0;
+    for(int i =1 ; i<=n ; i++){
+        if(n%i==0){
+            count ++;
+        }
+    }
+    if(count == 2){
+        cout<<"Prime";
+    }
+    else{
+        cout<<"not a prime";
+    }
+}
 int main(){
-    int m;
-    divisors(m);
+    int n;
+    prime();
     return 0;
 }
