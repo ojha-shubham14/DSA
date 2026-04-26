@@ -11,9 +11,18 @@ void repeatname(int n){
     }
     
 }
+void printnumber(int n,int start = 1){
+    if(start>n){
+        return;
+    }
+    else{
+        cout<<start<<endl;
+        printnumber(n,start+1);
+    }
+}
 int main(){
-    cout<<"enter the number of times you want to print your name :";
     int m;
+    cout<<"enter the number till where you want to print the digits :";
     cin>>m;
-    repeatname(m);
+    printnumber(m);
 }
