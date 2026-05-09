@@ -35,11 +35,15 @@ void reversenumber2(int i, int n){ //Back Tracking
     reversenumber2(i+1,n);
     cout<<i<<" ";
 }
+int sum(int n){
+    if(n<1) return 0;
+    else{
+        return n + sum(n-1);
+    }
+}
 int main(){
     int m,a;
-    cout<<"enter number to reverse from n - i : ";
-    cin>>a;
-    cout<<"enter number till where you want to reverse : ";
+    cout<<"enter number: ";
     cin>>m;
-    reversenumber2(m,a);
+    cout<<sum(m);
 }
