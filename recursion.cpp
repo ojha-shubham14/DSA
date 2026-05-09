@@ -20,7 +20,7 @@ void printnumber(int n,int start = 1){
         printnumber(n,start+1);
     }
 }
-void reversenumber(int n){
+void reversenumber(int n){  //Forward method
     if(n==0){
         return;
     }
@@ -30,9 +30,16 @@ void reversenumber(int n){
         reversenumber(n-1);
     }
 }
+void reversenumber2(int i, int n){ //Back Tracking
+    if(i>n) return ;
+    reversenumber2(i+1,n);
+    cout<<i<<" ";
+}
 int main(){
-    int m;
-    cout<<"enter number to reverse from n - 1 :  ";
+    int m,a;
+    cout<<"enter number to reverse from n - i : ";
+    cin>>a;
+    cout<<"enter number till where you want to reverse : ";
     cin>>m;
-    reversenumber(m);
+    reversenumber2(m,a);
 }
