@@ -41,9 +41,13 @@ int sum(int n){
         return n + sum(n-1);
     }
 }
+int fact(int n){
+    if(n<=1) return 1; // return 1 means if n== 0 or 1 tab calculated answer =1 batao
+    return n*fact(n-1);
+}
 int main(){
     int m,a;
     cout<<"enter number: ";
     cin>>m;
-    cout<<sum(m);
+    cout<<"factorial is :"<<fact(m);
 }
