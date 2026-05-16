@@ -48,25 +48,37 @@ int fact(int n){
 void reverseArray(int a[],int start,int end){
     if(start>=end) return;
     else{
-        int temp = a[start];
+        int temp = a[start]; //can use swap(start,end) also but doing.
         a[start] = a[end];
         a[end]=temp;
         reverseArray(a,start+1,end-1);
         
     }
 }
+void CheckPal(string word,int start,int end){
+    if(start>=end){
+        cout<<"It's a palindome";
+        return;
+    }
+    if(word[start]!=word[end]){
+        cout<<"not a palindrome";
+        return;
+    }
+        CheckPal(word,start+1,end-1);
+    /*int main(){
+    string shabd;
+    int a,b;
+    cout<<"enter any word to check for palindrome : ";
+    cin>>shabd;
+    CheckPal(shabd,0,shabd.length()-1);
+    return 0;
+}*/
+}
 int main(){
-    int size;
-    cout<<"enter size: ";
-    cin>>size;
-    int array [size];
-    cout<<"enter the array of the given size \n";
-    for(int i =0;i<size;i++){
-        cin>>array[i];
-    }
-    cout<<"reversed array is :";
-    reverseArray(array,0,size-1);
-    for(int j =0;j<size;j++){
-        cout<<array[ j ];
-    }
+    string shabd;
+    int a,b;
+    cout<<"enter any word to check for palindrome : ";
+    cin>>shabd;
+    CheckPal(shabd,0,shabd.length()-1);
+    return 0;
 }
