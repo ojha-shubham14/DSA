@@ -45,9 +45,28 @@ int fact(int n){
     if(n<=1) return 1; // return 1 means if n== 0 or 1 tab calculated answer =1 batao
     return n*fact(n-1);
 }
+void reverseArray(int a[],int start,int end){
+    if(start>=end) return;
+    else{
+        int temp = a[start];
+        a[start] = a[end];
+        a[end]=temp;
+        reverseArray(a,start+1,end-1);
+        
+    }
+}
 int main(){
-    int m,a;
-    cout<<"enter number: ";
-    cin>>m;
-    cout<<"factorial is :"<<fact(m);
+    int size;
+    cout<<"enter size: ";
+    cin>>size;
+    int array [size];
+    cout<<"enter the array of the given size \n";
+    for(int i =0;i<size;i++){
+        cin>>array[i];
+    }
+    cout<<"reversed array is :";
+    reverseArray(array,0,size-1);
+    for(int j =0;j<size;j++){
+        cout<<array[ j ];
+    }
 }
