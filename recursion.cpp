@@ -74,11 +74,21 @@ void CheckPal(string word,int start,int end){
     return 0;
 }*/
 }
+int fib(int n){
+    if(n<=1){
+        return n;
+    }
+    int Last = fib(n-1);
+    int SLast = fib(n-2);
+
+    return Last+SLast;
+    
+
+}
 int main(){
-    string shabd;
-    int a,b;
-    cout<<"enter any word to check for palindrome : ";
-    cin>>shabd;
-    CheckPal(shabd,0,shabd.length()-1);
+    int a;
+    cout<<"enter any number for the fibonacci input : ";
+    cin>>a;
+    cout<<fib(a);
     return 0;
 }
