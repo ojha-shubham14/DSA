@@ -82,6 +82,14 @@ int fib(int n){
     int SLast = fib(n-2);
 
     return Last+SLast;
+
+    /*int main(){
+    int a;
+    cout<<"enter any number for the fibonacci input : ";
+    cin>>a;
+    cout<<fib(a);
+    return 0;
+}*/
     
 
 }
