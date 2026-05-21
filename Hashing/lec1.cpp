@@ -5,7 +5,7 @@ int f(int a[],int b){
     int count =0;
     int n;
     cin>>n;
-    for(int i = 0;i<size(a) ; i++){
+    for(int i = 0;i<n; i++){
         if(a[i]==b){
             count +=1;
         }
