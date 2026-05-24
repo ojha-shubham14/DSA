@@ -16,6 +16,8 @@ int main(){
     // int hash[1000001]; we can give like this but the size will be too big and the places int the array we dont use wo waste ho jayenge and befaltu me we will be using the space
     // better first find the maximum value in the main array and initialize the hash array by hash[maximum_element_of_mai_array + 1]
 
+    //Note: The maximum size for interger array is 10^6 i.e, int arr[1e6]; globally it is 10^7 i.e, int arr[1e7]; or near about the value
+
     int maximum = arr[0];
     for(int i = 0; i<n; i++){
         if(maximum<arr[i]){
