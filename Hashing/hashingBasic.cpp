@@ -23,7 +23,7 @@ int main(){
         }
     }
 
-    int hash[maximum+1] = {0}; //all places will be initialized to zero
+    int hash[maximum+1] = {0}; //all places will be initialized to zero and the hash array size should be 1 greater than the main array, suppose if the array size is 10^8 then the hash array size should be atleast (10^8)+1.
     for(int i = 0; i<n ;  i++){
         hash[arr[i]]+= 1; //hash of main array ka index value jo hai wo hi hash array k index value me jakke +1 kar dega
     }
