@@ -11,10 +11,16 @@ int main(){
     }
 
     //pre compute
-    map<int,int> mpp;
+    map<int,int> mpp; //mpp is the variable name for map data structure
     for(int i=0; i<size; i++){
         mpp[arr[i]] ++;
     }
+    /*how is map is better than hash ?
+    if the would be {100,1} and the maximum element in the array is 100
+    thus in hashing it would store 101 spaces of array i,e only for 3 elements
+    where as in map we only store the distinct numbers along with its occurences
+    therefore it is slightly better than hashing. 
+    */
 
 
     //fetch
