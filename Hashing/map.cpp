@@ -11,6 +11,7 @@ int main(){
     }
 
     //pre compute
+    //map always stores in sorted order i.e, in ascending order
     map<int,int> mpp; //mpp is the variable name for map data structure
     for(int i=0; i<size; i++){
         mpp[arr[i]] ++;
