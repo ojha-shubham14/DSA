@@ -35,6 +35,6 @@ int main(){
         cout<<"Frequencies is :"<<mpp[number]<<endl;
 
     }
-    return 0;
+    return 0; //HI
 
 }
