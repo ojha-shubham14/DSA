@@ -1,35 +1,40 @@
 #include<bits/stdc++.h>
 using namespace std;
-void selection(int a[],int n){
-    for(int i =0;i<n-1;i++){
+void selection(int a[] , int n){
+    
+    for(int i=0;i<=n-2;i++){
         int min = i;
-        for(int j=i+1;j<n;j++){
+        for(int j=i; j<=n-1; j++){
             if(a[j]<a[min]){
                 min = j;
             }
         }
         int temp = a[min];
         a[min]= a[i];
-        a[i] =temp;  
-    }
-    cout<<"\nThe Sorted order is:"<<endl;
-    for(int i=0;i<n;i++){
-        cout<<a[i];
+        a[i]=temp;
     }
 }
 int main(){
     int n;
-    cout<<"\nEnter the size of the array";
+    cout<<"Enter the number of elements in the array :\n";
     cin>>n;
-    int array[n];
-    cout<<"Enter the array\n";
-    for(int i=0;i<n;i++){
-        cin>>array[i];
+    int a[n];
+    cout<<"Enter the elements of the array : \n";
+    for(int i=0; i<n; i++){
+        cin>>a[i];
     }
-    cout<<"\nThe array is:\n";
-    for(int i=0;i<n;i++){
-        cout<<array[i];
+    cout<<"BEFORE SORTING :\n";
+    for(int i=0; i<n; i++){
+        cout<<a[i];
     }
-    selection(array,n);
+    selection(a,n);
+    
+    cout<<"\n";
+
+    cout<<"AFTER SORTING :\n";
+
+    for(int i =0; i<n; i++){
+        cout<<a[i];
+    }
     return 0;
 }
