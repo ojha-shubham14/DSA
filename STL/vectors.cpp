@@ -34,22 +34,55 @@ int main(){
     }
 
     // creating a blank vector 
+
+    cout<<endl<<"Blank vector container without initializing elements to it :"<<endl;
+
     vector <int> v1(5);
     for(int x:v1){
         cout<<x;            //This will print 5 zeros or garbage value.
     }
     v1.push_back(7);
-    cout<<endl;
+    cout<<endl<<"printing vector v1 :"<<endl;
+
     for(int x:v1){
         cout<<x;            //This will print 5 zeros and followed by 7.
     }
     
     //we can copy one vector container to another like copying one container and pasting it on the other container.
     vector<int> v2(v1);
-    cout<<endl;
+    cout<<endl<<"copied vector and now printing vector v2 :"<<endl;
     for(int y:v2){
         cout<<y;            //This prints the exact same elements present in the vector container v1.
     }
+
+    cout<<endl<<"Vector Iterators"<<endl;
+    cout<<endl;
+    v.push_back(4);
+    v.push_back(5); 
+    v.push_back(6); 
+    v.push_back(7); 
+    v.push_back(8);  
+    cout<<endl<<"Vector V : "<<endl;
+    for(auto x:v){
+        cout<<x<<" ";
+    }
+    cout<<endl<<" using v.begin() and *(it)"<<endl;
+    vector<int> ::iterator it = v.begin();          //it points to the memory address of the first element and doesn't points to the element and the element 1 can be seen in output only because of "*" which is used with *(it) and which is used to show the the actual element present in the memory address
+    cout<<*(it);
+
+    cout<<endl<<" using v.back() : "<<endl;
+    cout<<v.back();
+
+
+    cout<<endl<<"Using v.end() and *(it) and see what comes: "<<endl;
+    it = v.end();
+
+    cout<<*(it)<<endl;              // it prints 0 because the v.end() is used to point to the memory address which is after the last element in the vector container and generallay have garbage values stored or zero.
     
+    it--;
+    cout<<"now doing it-- and it will point to the preious memory address and upon doing *(it) it will show the element present there : "<<endl;
+    cout<<*(it)<<endl;
+
+    cout<<endl<<endl;
     return 0;
 }
