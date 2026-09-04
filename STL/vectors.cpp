@@ -84,5 +84,73 @@ int main(){
     cout<<*(it)<<endl;
 
     cout<<endl<<endl;
+
+    //deletion of elements in the vectors
+
+    vector<int> shubham;
+    shubham.push_back(4);
+    shubham.push_back(5); 
+    shubham.push_back(6); 
+    shubham.push_back(7); 
+    shubham.push_back(8);
+
+    cout<<"Vector shubham is : \n";
+    for(auto a:shubham){
+        cout<<a<<" ";
+    }
+    shubham.erase(shubham.begin());     //deletes the first element address of the the vector
+
+    cout<<"\nAfter Deletion of 1st element: \n";
+
+    for(auto a:shubham){
+        cout<<a<<" ";
+    }
+
+    cout<<"\nAfter Deletion of last element: \n";
+    shubham.erase(shubham.end()-1);             //deletes 8
+    for(auto a:shubham){
+        cout<<a<<" ";
+    }
+
+    cout<<"\nNew elements in the vector: \n";
+
+    shubham.push_back(9);
+    shubham.push_back(10); 
+    shubham.push_back(11); 
+    shubham.push_back(12); 
+    shubham.push_back(13);
+
+    for(auto a:shubham){
+        cout<<a<<" ";
+    }
+
+    cout<<"\nAfter Deletion of 5th element : \n";
+
+    vector<int>::iterator abc = shubham.begin();        //now the 1st address is stored in "abc" now.
+    abc+=5;
+    shubham.erase(abc);                      //deletes the 6th element from base address of it which is 11.
+
+    for(auto a:shubham){
+        cout<<a<<" ";
+    }
+
+    // deleting multiple elements i.e, a continuous range of elements
+    cout<<endl<<"current vector of elements : \n";
+    for(auto a:shubham){            //5 6 7 9 10 12 13
+        cout<<a<<" ";
+    }
+
+    cout<<"\nAfter Deletion of 3rd,4th,5th indexed element : \n";       //that is element 9,10 and 12
+    shubham.erase(shubham.begin()+3,shubham.begin()+6);         //the end address is not inclusive so give one address ahead of the "want to delete element". i.e, [start,end).
+    for(auto a:shubham){            //5 6 7 13
+        cout<<a<<" ";
+    }
+
+
+    //Insertion of elements at random place not back 
+
+    
+
+
     return 0;
 }
