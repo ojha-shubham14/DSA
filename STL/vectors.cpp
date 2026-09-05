@@ -148,8 +148,44 @@ int main(){
 
 
     //Insertion of elements at random place not back 
+    cout<<endl;
+    vector<int> vector(3,500);
+    for(auto a:vector){            //500 500 500
+        cout<<a<<" ";
+    }
+    cout<<endl;
+    vector.insert(vector.begin(),100);          //.insert(placingAddress,placingElement)        //places 100 500 500 500
+    vector.insert(vector.begin()+2,7);          //100 500 7 500 500
+    for(auto a:vector){            //
+        cout<<a<<" ";
+    }
 
-    
+    //when you want to add multiple same elements at a position
+    cout<<endl;
+    cout<<endl<<"Vector Before :"<<endl; 
+    for(auto a:vector){            //100 500 7 500 500
+        cout<<a<<" ";
+    }
+    vector.insert(vector.begin()+1,3,9);            //places 3 different elements 9 9 9 on index 1
+    cout<<endl<<"Vector after :"<<endl;
+    for(auto a:vector){            //100 9 9 9 500 7 500 500
+        cout<<a<<" ";
+    }
+
+    //Inserting a vector inside a vector 
+    cout<<endl<<"Inserting shubham inside vector name 'VECTOR'"<<endl;      //Shubham: 5 6 7 13 Vector:100 9 9 9 500 7 500 500
+    vector.insert(vector.begin(),shubham.begin(),shubham.end());
+    cout<<endl;
+    for(auto a:vector){            //5 6 7 13 100 9 9 9 500 7 500 500
+        cout<<a<<" ";
+    }
+
+    cout<<endl<<"placing vector 'v' inside vector at Index 4 and from index 4 to 6 of vector 'v' "<<endl; //Vector v:1 3 4 5 6 7 8  Vector:5 6 7 13 100 9 9 9 500 7 500 500 that means 6 7 8 should come in Vector:5 6 7 6 7 8 13 100 9 9 9 500 7 500 500
+    vector.insert(vector.begin()+3,v.begin()+4,v.begin()+7);
+    for(auto a:vector){            //5 6 7 6 7 8 13 100 9 9 9 500 7 500 500
+        cout<<a<<" ";
+    }
+
 
 
     return 0;
