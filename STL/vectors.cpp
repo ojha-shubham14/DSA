@@ -186,7 +186,69 @@ int main(){
         cout<<a<<" ";
     }
 
+    //other functions of vector 
 
 
+    //1. size()
+    cout<<endl<<"size of vector 'vector' is :"<<endl;
+    cout<<vector.size();
+
+    //2.popping back of element , just like pushing back the vector but this removes the last element.
+    cout<<endl<<"popping the last element of vector which is 500"<<endl;
+    vector.pop_back();
+    for(auto a:vector){
+        cout<<a<<" ";
+    }
+
+    //3. swapping 2 vector
+    cout<<endl<<"vector 'Shubham' :";
+
+    for(auto a:shubham){
+        cout<<a<<" ";
+    }
+    cout<<endl;
+    cout<<endl<<"vector 'vector' :";
+
+    for(auto a:vector){
+        cout<<a<<" ";
+    }
+    cout<<endl;
+    vector.swap(shubham);
+
+    //4.checking a vector is empty or not 
+    cout<<endl<<"is vector 'vector' empty ? 0---> means no(False) & 1---> means yes(True)"<<endl;
+    cout<<vector.empty();
+
+    //5.clearing vector
+    cout<<endl<<"Before Clearing vectors:"<<endl;
+
+    cout<<endl<<"vector 'Shubham' :";
+
+    for(auto a:shubham){
+        cout<<a<<" ";
+    }
+    cout<<endl;
+    cout<<endl<<"vector 'vector' :";
+
+    for(auto a:vector){
+        cout<<a<<" ";
+    }
+    cout<<endl;
+
+    cout<<endl<<"after Clearing vectors:"<<endl;
+    vector.clear();
+    shubham.clear();
+    cout<<endl<<"vector 'Shubham' :";
+
+    for(auto a:shubham){
+        cout<<a<<" ";
+    }
+    cout<<endl;
+    cout<<endl<<"vector 'vector' :";
+
+    for(auto a:vector){
+        cout<<a<<" ";
+    }
+    cout<<endl;
     return 0;
 }
