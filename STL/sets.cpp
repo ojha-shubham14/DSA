@@ -69,6 +69,57 @@ int main(){
         cout<<a<<" ";
     }
 
+    //lower bound and upper bound concepts
+
+    set<int> ss;
+    ss.insert(9);
+    ss.insert(8);
+    ss.insert(7);
+    ss.insert(6);
+    ss.insert(5);
+    ss.insert(4);
+    ss.insert(3);
+    ss.emplace(2);
+    cout<<endl<<"set ss :"<<endl;
+    for(auto a : ss){
+        cout<<a<<" ";
+    }
+    cout<<endl;
+
+    auto x = ss.lower_bound(3);                 //returns an iterator of the element = or > than element.
+    cout<<endl<<"lower bound is : "<<*x<<" ";
+
+    set<int>::iterator y = ss.upper_bound(7);   //returns an iterator of the element greater than it.
+    cout<<endl<<"upper bound is : "<<*y<<" "<<endl;
+
+    //using lower and upperbound to erase elements
+    cout<<endl<<"erasing using LB and UB:";
+
+    cout<<endl<<"the set ss before erasing elements :"<<endl;
+    for(auto a : ss){
+        cout<<a<<" ";
+    }
+    cout<<endl;
+
+    ss.erase(ss.lower_bound(3),ss.upper_bound(4)); //erases the elements between 3 and 4 and both included 
+                                                //both included because ss.upper_bound() returns next address of the given element and the limit is [start,end).
+
+    cout<<"remaining elements : "<<endl;
+    for(auto a : ss){
+        cout<<a<<" ";
+    }
+    cout<<endl;
+    
+    auto a = ss.lower_bound(5);
+    auto b = ss.upper_bound(8);
+    cout<<endl<<"erasing : "<<*a<<" "<<*b<<endl;
+    ss.erase(a,b);
+
+    cout<<"remaining set ss :";
+    for(auto a : ss){
+        cout<<a<<" ";
+    }
+    cout<<endl;                         
     
     return 0;
 
