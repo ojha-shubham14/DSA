@@ -94,6 +94,15 @@ int main(){
 
     auto ub = mpp.upper_bound(2);
     cout<<"ub:"<<(*ub).first<<"->"<<(*ub).second<<endl;
+
+
+    //other functions of map 
+    /*
+    1.empty()
+    2.swap()
+    3.size()
+    4.erase()
+    */
     return 0;
 
 
