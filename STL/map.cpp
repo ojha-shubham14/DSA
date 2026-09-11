@@ -65,8 +65,35 @@ int main(){
 
 
 
-    
+    //accessing single element 
 
+    cout<<mpp[1];           //returns the vlaue of the key '1' present from mpp 
+
+    cout<<mpp[300];         //as 300 doesn't exists so it inserts 300 into mpp with default int i.e, 0
+                            //it actually inserts {300,0} and prints 0 as it's occurence.
+    
+    
+    //Find key in map 
+
+            //it takes iterator as data type 
+    auto it = mpp.find(3);
+    cout<<endl<<"key:3 and value :"<<(*it).second;      //prints the occurence of the key 3
+
+    auto m = mpp.find(7000);
+    if(m==mpp.end()){
+        cout<<endl<<"key:7000 and value :"<<"not found in mpp  hence pointing to next address of the last element present in mpp"<<endl;
+    }                   //if the elment is not present then it points to end().
+
+
+
+
+    //upper and lower bound 
+
+    auto lb = mpp.lower_bound(2);
+    cout<<"lb:"<<(*lb).first<<"->"<<(*lb).second<<endl;
+
+    auto ub = mpp.upper_bound(2);
+    cout<<"ub:"<<(*ub).first<<"->"<<(*ub).second<<endl;
     return 0;
 
 
