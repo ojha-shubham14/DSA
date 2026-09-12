@@ -3,6 +3,15 @@ using namespace std;
 int main(){
     //declaration 
     map<int,int>mpp;
+
+
+    map<int,string> mm;                 
+    mm[3]={"mango"};                            //we can only make this in map or unordered_map not in multimap
+                                                //because it needs to unique element property as a feature
+    for(auto &[a,b]:mm){
+        cout<<"{"<<a<<","<<b<<"} ";
+    }
+    cout<<endl;
     
     // other declaration
     map<int,pair<int,int>>mapp1;

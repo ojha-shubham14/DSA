@@ -4,6 +4,13 @@ int main(){
     multimap<int,string> mm ;
     mm ={{1,"b"},{2,"a"},{1,"a"}};
 
+
+    //mm[3]={"mango"};          //we can't do like this multimap unlike map/unordered map because there
+                                //can exist multiple occurences of the element and when we do like this 
+                                //then the compiler gets confused that which key of 3 are we reffering to
+                                //thus this is only possible with the container which have unique elements as a feature of it. 
+
+
     for(auto &[key,value]:mm){              //now in multimap it can store duplicate key and that too in sorted order
         cout<<"{"<<key<<":"<<value<<"} ";
     }
@@ -66,6 +73,9 @@ int main(){
     5.end()
     6.clear()
     */
+
+
+    //just mm[element] doesn't work and that too because it can contains duplicate elements and then it creates a mess to compiler to which one user wants to point.
 
 
     return 0;
