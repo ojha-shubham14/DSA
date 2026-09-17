@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-bool sortedArray(vector<int> &v,int n){
+bool sortedArray(vector<int> &v,int n){     //optimal approach
+                                            //time complexity: O(N)
     for(int i =1;i<n;i++){
         //if(v[i]>v[i-1]);          //doing like this,compiler feels like , if() {do nothing} eles(return false).
 
@@ -10,6 +11,18 @@ bool sortedArray(vector<int> &v,int n){
     }
     return true;
 }
+
+bool sortedArray2(vector<int> &v,int n){             //brute force approach 
+                                                     //time complexity : O(N^2)
+    for(int i=0;i<n;i++){
+        for(int j = i+1;j<n;j++){
+            if(v[i]>v[j]){
+                return false;
+            }
+        }
+    }
+    return true;
+}           
 
 
 int main(){
