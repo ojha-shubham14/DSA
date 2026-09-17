@@ -1,20 +1,32 @@
 #include<bits/stdc++.h>
 using namespace std;
-void maxElement(int arr[],int n){
-    int max = arr[0];
-    for(int i=0;i<n;i++){       //can't do sizeof(arr); it's a classic trap.
-                                //sizeof(arr), when we pass array into the fucntion then 
-                                //behaves like a pointer and sizeof() just tells how big 
-                                //the pointer is , in 64bit system , every pointer is of 8 bits
-                                //no matter how many element does it contain
-        if(arr[i]>max){
-            max=arr[i];
+int SecondLargest(vector<int> &a,int n){
+    int largest = a[0];
+    int slargest = INT_MIN;
+    for(int i = 1;i<n;i++){
+        if(a[i]>largest){
+            slargest = largest;
+            largest = a[i];
         }
+        else if (a[i]<largest && a[i]>slargest ){
+            slargest = a[i];
+        }
+        
     }
-    cout<<"Maximum element of the array is : "<<max<<endl;
+    return slargest;
 }
 int main(){
     vector<int> v ={2,5,1,3,0};
+    int n = 5;
+
+    //Manual method 
+    int a = SecondLargest(v,n);
+    cout<<"second largest element in the array is : "<<a<<endl<<endl;
+
+
+
+
+    
     auto it1 = v.begin();
     auto it2 = v.end();
     int maxi = *max_element(it1,it2);
