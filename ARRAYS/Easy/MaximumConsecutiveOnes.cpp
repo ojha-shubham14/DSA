@@ -5,12 +5,10 @@ class Solution{
         int findConsecutiveOnes(vector <int> & arr){
             int count = 0;              //stores the number of ones which are consecutive.
             int maxi = 0;               //stores the maximum occurence of ones
-            for(auto a : arr){
-                if(a==1){
+            for(int i =0; i<arr.size(); i++){
+                if(arr[i]==1){
                     count++;            //if number of ones are consecutive it adds +1 to it.
-                    if(count>maxi){     //maxi stores the maximum occurences of ones even if consecutiveness is broken
-                        maxi = count;
-                    }
+                    maxi=max(count,maxi);
                 }
                 else{                   //if the consecutiveness of ones are broken, then the counter resets to zero
                                         //if the counter is less after counting 1's in the array from that array position where the consecutiveness was broken then the maxi would not be changed, if count increases than maxi then it would be changed.\
