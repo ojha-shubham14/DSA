@@ -3,12 +3,22 @@ using namespace std;
 class Solution {
 public:
     char findTheDifference(string s, string t) {
-        int result = 0;
-        int i =0;
-        while(s[i]&t[i]){
-            result  = result^s[i]^t[i];
-            i++; 
+        char result = 0;
+        for(auto c : s){
+            result ^= c;
         }
-        return result^t[i]; 
+        for(auto c : t){
+            result ^= c;
+        }
+        return result;
+
     }
 };
+
+int main(){
+    string s = "shubham"; string  t = "shubhamO";
+    Solution object;
+    char result = object.findTheDifference(s,t);
+    cout<<"The difference is : "<<result;
+    return 0;
+}
