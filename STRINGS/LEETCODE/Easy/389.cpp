@@ -15,10 +15,13 @@ public:
     }
 };
 
-int main(){
+int shubham(){
     string s = "shubham"; string  t = "shubhamO";
     Solution object;
     char result = object.findTheDifference(s,t);
     cout<<"The difference is : "<<result;
     return 0;
+}
+int main(){
+    return shubham();
 }
