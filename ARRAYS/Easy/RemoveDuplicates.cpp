@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std; 
-class solution{
+class solution{                 //we have to remove the duplicates element inplace i.e, we can't create any new space that is vecotr or set , we have to do it inplace that is space complexity should be o(1).
     public:
         void removeDuplicates(vector<int> &nums){
             int i = 0;
@@ -14,7 +14,7 @@ class solution{
            cout<<"array is : "<<endl;
            for(auto it : nums){
             cout<<it<<" ";
-            
+
            }
         }
 };
