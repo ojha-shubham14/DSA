@@ -4,7 +4,7 @@ A collection of my **Data Structures and Algorithms (DSA)** solutions and practi
 
 This repository documents my ongoing journey of learning, practicing, and improving my problem-solving skills through different DSA concepts and coding problems.
 
-> 🚧 This repository is a work in progress. I am still learning and regularly adding new problems and solutions.
+>This repository is a work in progress. I am still learning and regularly adding new problems and solutions.
 
 
 ## Goal
