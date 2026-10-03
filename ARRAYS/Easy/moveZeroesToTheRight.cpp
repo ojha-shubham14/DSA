@@ -25,10 +25,31 @@ public:
     }
 };
 
+class BruteForceSolution{
+    public:
+        void moveZeroesToTheEndWithoutChangingOrder(vector<int> &nums){
+            int n = nums.size();
+            vector<int> temp ;
+            for(int i = 0; i<n; i++){
+                if(nums[i]!=0){
+                    temp.push_back(nums[i]);
+                }
+            }
+            int s = temp.size();
+            for(int i = 0; i<s; i++){
+                nums[i]= temp[i];
+            }
+            for(int i = s; i<n; i++){
+                nums[i]= 0;
+            }
+            
+        }
+};
+
 int shubham(){
     vector<int> V ={1,2,0,0,3,2,0,4,0,7,5,4,3,2,1,0,98};
-    Solution object;
-    object.moveZeroes(V);
+    BruteForceSolution object;
+    object.moveZeroesToTheEndWithoutChangingOrder(V);
     cout<<"array after moving all the zeroes : "<<endl;
     for(auto a : V){
         cout<<a<<" ";
