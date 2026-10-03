@@ -46,10 +46,35 @@ class BruteForceSolution{
         }
 };
 
+class optimalSolution {
+    public:
+        void moveZeroOptimal(vector<int>& nums){
+            //we will use 2 pointers, for that we need to know where the first zero is present in the array
+            int j;      //pointer for initial zero
+            for(int i = 0 ; i < nums.size(); i++){
+                if(nums[i]==0){
+                    j=i;
+                    break;
+                }
+            }
+
+            //now we will assign non zero element from next position from where the first zero is encountered.
+            for(int i = j+1; i<nums.size(); i++){
+                if(nums[i]!=0){
+                    //swap the elements, that will make the zero shift towards right and non zero towards the left.
+                    int temp = nums[j];
+                    nums[j]=nums[i];
+                    nums[i]=temp;
+                    j++;
+                }
+            }
+        }
+};
+
 int shubham(){
     vector<int> V ={1,2,0,0,3,2,0,4,0,7,5,4,3,2,1,0,98};
-    BruteForceSolution object;
-    object.moveZeroesToTheEndWithoutChangingOrder(V);
+    optimalSolution object;
+    object.moveZeroOptimal(V);
     cout<<"array after moving all the zeroes : "<<endl;
     for(auto a : V){
         cout<<a<<" ";
