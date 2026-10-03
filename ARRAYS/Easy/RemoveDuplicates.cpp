@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std; 
-class solution{                 //we have to remove the duplicates element inplace i.e, we can't create any new space that is vecotr or set , we have to do it inplace that is space complexity should be o(1).
+/*class BruteForcesolution{                 
     public:
         void removeDuplicates(int nums[]){
             int i = 0;
@@ -17,10 +17,30 @@ class solution{                 //we have to remove the duplicates element inpla
 
            }
         }
+};*/
+
+class OptimalSolution{
+    public:
+        int removeDuplicatesFromSortedArray(vector<int> &nums){
+            int i =0;       //first pointer
+            for(int j =1; j<nums.size();j++){       //second pointer, it iterates until non equal to nums[i] comes in the array
+                if(nums[j]!=nums[i]){
+                    nums[i+1]=nums[j];
+                    i++;
+                }
+
+            }
+            return (i+1);
+        }
 };
 int main(){
-    int  v[] = {1,1,2,2,2,3,3};
-    solution object;
-    object.removeDuplicates(v);
+    vector<int> nums ={1,1,1,2,2,2,2,2,3,3,4,4,4,4};
+    OptimalSolution obj;
+    int k =obj.removeDuplicatesFromSortedArray(nums);
+    cout<<k<<endl;
+    for(auto a : nums){
+        cout<<a<<" ";
+    }
+    
     return 0;
 }
