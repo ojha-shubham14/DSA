@@ -24,13 +24,32 @@ class bruteforce{
         }
 };
 
+class Optimal{
+    public:
+        int findMissingNumberFromArray(vector<int> &nums){
+            int n = nums.size();
+            int expected_sum = n*(n+1)/2;
+            int sum_obtained = 0;
+            for(int i =0; i<n; i++){
+                sum_obtained+=nums[i];
+            }
+            int difference = expected_sum-sum_obtained;
+            return difference;
+        }
+};
+
 int shubham(){
     vector<int> nums = {3,2,6,9,8,7,5,4,0};
     bruteforce object;
     int result = object.findmissingNumber(nums);
-    cout<<"the missing number in the array is :" <<result;
+    cout<<"the missing number in the array is :" <<result<<endl;
     return 0;
 }
 int main(){
     shubham();
+    vector<int> nums = {3,2,6,9,8,7,5,4,0};
+    Optimal obj;
+    int res = obj.findMissingNumberFromArray(nums);
+    cout<<"Found the missing number in the arrary and it is : "<<res<<endl;
+    return 0;
 }
