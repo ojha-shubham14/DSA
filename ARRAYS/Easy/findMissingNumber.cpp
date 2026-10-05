@@ -1,26 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
-class bruteforce{
+
+class better{
     public:
         int findmissingNumber(vector<int>& nums){
             int n = nums.size();
-            for(int i = 0; i<n-1; i++){
-                for(int j = 0; j<n-i-1; j++){
-                    if(nums[j]>nums[j+1]){
-                        int temp = nums[j];
-                        nums[j]=nums[j+1];
-                        nums[j+1]=temp;
-                    }
-                }
-            
+            int xor1 = 0, xor2=0;
+            for(int i = 0; i<n; i++){
+                xor2^=nums[i];
+                xor1^=i;
             }
-            int i = 0;
-            for(i=0; i<n; i++){
-                if(nums[i]!=i){
-                    break;
-                }
-            }
-            return i;
+            xor1^=n;
+            return xor1^xor2;
         }
 };
 
@@ -40,7 +31,7 @@ class Optimal{
 
 int shubham(){
     vector<int> nums = {3,2,6,9,8,7,5,4,0};
-    bruteforce object;
+    better object;
     int result = object.findmissingNumber(nums);
     cout<<"the missing number in the array is :" <<result<<endl;
     return 0;
