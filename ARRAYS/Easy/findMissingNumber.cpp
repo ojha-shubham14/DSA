@@ -15,7 +15,7 @@ class better{
         }
 };
 
-class Optimal{
+class Better2{
     public:
         int findMissingNumberFromArray(vector<int> &nums){
             int n = nums.size();
@@ -39,7 +39,7 @@ int shubham(){
 int main(){
     shubham();
     vector<int> nums = {3,2,6,9,8,7,5,4,0};
-    Optimal obj;
+    Better2 obj;
     int res = obj.findMissingNumberFromArray(nums);
     cout<<"Found the missing number in the arrary and it is : "<<res<<endl;
     return 0;
