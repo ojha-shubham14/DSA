@@ -16,24 +16,12 @@ class Optimal{
                     j++;
                 }
                 else{
-                    if(intersection.size()==0 || intersection.back()!=a[i]){
+                    //if(intersection.size()==0 || intersection.back()!=a[i]){ --> This will make it wrong as in the question they said that it should also repeat the number if another pair is there.(explain later in home)
                         intersection.push_back(a[i]);
                     }
                     i++;
                     j++;
-                }
-            }
-            while(i<n1){
-                if(intersection.size()==0|| intersection.back()!=a[i]){
-                    intersection.push_back(a[i]);
-                }
-                i++;
-            }
-            while(j<n2){
-                if(intersection.size()==0|| intersection.back()!=b[j]){
-                    intersection.push_back(b[j]);
-                }
-                j++;
+                //}
             }
             return intersection;
         }
