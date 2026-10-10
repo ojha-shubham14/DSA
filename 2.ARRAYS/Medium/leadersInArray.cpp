@@ -11,10 +11,10 @@ class bruteforce{
                     if(nums[i]<nums[j]){
                         isleaders = false;
                         break;
-                    }
-                    if(isleaders == true){
-                        leaders.push_back(nums[i]);
-                    }
+                    }   
+                }
+                if(isleaders == true){
+                    leaders.push_back(nums[i]);
                 }
             }
             return leaders; 
