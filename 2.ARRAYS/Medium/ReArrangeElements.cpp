@@ -30,6 +30,28 @@ class Bruteforce{
         }
 };
 
+
+class Optimal{
+    public:
+        vector<int> RearrangeEle(vector<int> & nums){
+            int n = nums.size();
+            int posIndex = 0;       //all the positive numbers will occupy even indices
+            int negIndex = 1;       // all the negative numbers will occupy odd indices
+            vector<int> res(n,0);
+            for(int i = 0; i<n; i++){
+                if(nums[i]<0){
+                    res[negIndex] = nums[i];
+                    negIndex+=2;
+                }
+                else{
+                    res[posIndex]= nums[i];
+                    posIndex += 2;
+                }
+            }
+            return res;
+        }
+};
+
 int main(){
     vector<int> nums = {2,4,5,-1,-3,-4};
     Bruteforce object;
@@ -37,6 +59,13 @@ int main(){
     for(auto a : res){
         cout<<a<<" ";
 
+    }
+    cout<<endl;
+
+    Optimal obj;
+    vector<int> ans = obj.RearrangeEle(nums);
+    for(auto a : ans){
+        cout<<a<<" ";
     }
     cout<<endl;
 }
