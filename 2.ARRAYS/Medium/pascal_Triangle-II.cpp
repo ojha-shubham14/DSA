@@ -26,8 +26,24 @@ class bruteforce{
     }
 };
 
+class optimal{
+    public: 
+        vector<int> getRow(int rowIndex){
+            vector<int> row;    //to store the Index and return it
+            long long current = 1;      //this stores the current element from the pascal triangle.
+            row.push_back(1);
+
+            for(int col = 1 ; col<=rowIndex ; col++){
+                current =   current * (rowIndex-col+1)/col; // to know why we have used this then do check my dsa notes, detailed explantion is there. 
+                row.push_back(current);
+            }
+            return row;
+
+        }
+};
+
 int main(){
-    bruteforce obj;
+    optimal obj;
     vector<int> row;
     row = obj.getRow(5);
     for(auto a : row){
