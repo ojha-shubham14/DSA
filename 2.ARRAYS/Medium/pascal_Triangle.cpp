@@ -32,7 +32,7 @@ class optimal{
 
         long long res = 1;
         for(int i =0 ; i<r; i++){       //jitni col utni tak he loop run karegi (to know the reason check the handwritten book). 
-            res = res*(n-1);        //Numerator first gets calculated i.e, 10*9*8....... and so on
+            res = res*(n-i);        //Numerator first gets calculated i.e, 10*9*8....... and so on
             res = res/(i+1);        //denominator then gets calculated i.e, 1*2*3....... and so on. not in 3*2*1 becasue first it check (10/3)*(9/2)*(8/3) but this gives error as 10 is not divisible by 3 so instead we use (10/1)*(9/2)*(8/3) then 10 is divisible by 1 and other elements will be cross divided if needed.
         }
         return res;
