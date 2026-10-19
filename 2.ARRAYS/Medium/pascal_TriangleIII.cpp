@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Bruteforce {
 public:
     long long ncr(int n, int r) {
         if (r < 0 || r > n) {
@@ -38,7 +38,7 @@ public:
 
 int main(){
     vector<vector<int>> answer;
-    Solution obj;
+    Bruteforce obj;
     answer = obj.generate(5);
     for(auto a : answer){
         for(auto element : a){
