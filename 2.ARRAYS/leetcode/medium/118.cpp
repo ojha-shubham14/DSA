@@ -30,3 +30,22 @@ public:
         return triangle;
     }
 };
+
+
+
+class Optimal_Solution {
+public:
+    vector<vector<int>> generate(int n) {
+        vector<vector<int>> triangle;
+        for(int r = 1 ; r<=n; r++){
+            vector<int> row;
+            long long currentElement = 1;
+            for(int c = 1 ; c<=r; c++){
+                row.push_back(currentElement);
+                currentElement = currentElement*(r-c)/c;     //row-col/col
+            }
+            triangle.push_back(row);
+        }
+        return triangle;
+    }
+};
