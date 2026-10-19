@@ -18,8 +18,8 @@ class bruteforce{
 
     vector<int> getRow(int rowIndex){
         vector<int> row;
-        for(int i = 0 ; i<=rowIndex; i++){    //will go till rowIndex because Row number signifies how many Element present in each row. and it uses 0 based index that will print 2nd row if you give 1 as input and print 1st row if you give 0 as input
-            row.push_back(ncr(rowIndex,i)); //ncr(rowIndex,i) will find it out each element at each iteration, and Push_Back will add this into the row vector.
+        for(int i = 1 ; i<=rowIndex; i++){    //will go till rowIndex because Row number signifies how many Element present in each row. 
+            row.push_back(ncr(rowIndex-1,i-1)); //ncr(rowIndex,i) will find it out each element at each iteration, and Push_Back will add this into the row vector.
         }
         return row;
 
