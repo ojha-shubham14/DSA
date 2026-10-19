@@ -30,3 +30,19 @@ public:
        return row;
     }
 };
+
+class optimal{
+    public: 
+        vector<int> getRow(int rowIndex) {
+            vector<int> row;
+            long long current = 1;
+            row.push_back(1);
+
+            for(int i = 1 ; i<=rowIndex; i++){
+            current = current * (rowIndex - i+1 )/ i;
+            row.push_back(current);
+        }
+        return row;
+
+    }
+};
