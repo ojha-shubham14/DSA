@@ -36,10 +36,27 @@ public:
     }
 };
 
+class optimal{
+    public:
+    vector<vector<int>> triangle(int numRows){
+        vector<vector<int>> answer;
+        for(int r = 1 ; r <= numRows ; r++){
+            long long currentElement = 1;
+            vector<int> row;
+            for(int c = 1 ; c<=r ; c++){
+                row.push_back(currentElement);
+                currentElement = currentElement * (r-c )/c;         //row - col / col
+            }
+            answer.push_back(row);
+        }
+        return answer;
+    }
+};
+
 int main(){
     vector<vector<int>> answer;
-    Bruteforce obj;
-    answer = obj.generate(5);
+    optimal obj;
+    answer = obj.triangle(5);
     for(auto a : answer){
         for(auto element : a){
             cout<<element<<" ";
