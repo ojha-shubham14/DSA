@@ -2,7 +2,7 @@
 using namespace std;
 class bruteforce{
     public:
-    vector<vector<int>> rotateMatrix(vector<vector<int>> &matrix){
+    vector<vector<int>> rotateMatrix(vector<vector<int>> &matrix){      //check notes for overall logic
         int n = matrix.size();
         vector<vector<int>> answer(n,vector<int>(n));       //vector<int>(n)---> creates n elements in a row
                                                             //n ----> makes n rows of vector<int>(n)
