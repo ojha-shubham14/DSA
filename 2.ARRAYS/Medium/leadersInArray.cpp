@@ -39,7 +39,7 @@ class optimal{
     }
 }; 
 int main(){
-    cout<<"Using Bruteforce:"<<endl;
+    cout<<"Using Bruteforce:"<<endl;    
     vector<int> nums = {1,2,5,3,1,2};
     bruteforce object;
     vector<int> res =object.Leader(nums);
