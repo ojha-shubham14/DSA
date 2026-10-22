@@ -30,7 +30,7 @@ class bruteforce{
 class optimal{      //TC: O(n) SC:O(n) and Auxillary SC: O(1)
     public:
     bool isanagram(string s , string t){
-        vector<int> freq;
+        vector<int> freq(26,0);
         if(s.size()!=t.size()){
             return false;
         }
