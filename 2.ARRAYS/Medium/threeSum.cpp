@@ -50,6 +50,9 @@ class optimal{
         int n = nums.size();
         sort(nums.begin(),nums.end());
         for(int i = 0 ; i<n ; i++){
+             if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;               // that means pichle wala and next wala i is same so skip this one and move to the next(as we have checked all the possibility with this solution)
+            }
             int j = i+1;
             int k = n-1;
             while(j<k){             //j should be always less than k, because if they crosses each other then won't be able to make the solutionn
