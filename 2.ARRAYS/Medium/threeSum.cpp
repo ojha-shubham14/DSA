@@ -42,6 +42,43 @@ class better{
     }
 };
 
+
+class optimal{
+    public:
+    vector<vector<int>> triplet(vector<int> &nums){
+        vector<vector<int>> answer;         //for storing final selected triplets
+        int n = nums.size();
+        sort(nums.begin(),nums.end());
+        for(int i = 0 ; i<n ; i++){
+            int j = i+1;
+            int k = n-1;
+            while(j<k){             //j should be always less than k, because if they crosses each other then won't be able to make the solutionn
+                int sum = nums[i]+nums[j]+nums[k];
+                if(sum>0){
+                    k--;            //k is in the last index so usko piche lana hoto to make sum == 0
+                }
+                else if (sum>0){
+                    j++;            //j position to be increased because to make overall sum as 0
+                }
+                else{
+                    vector<int> temp = {nums[i],nums[j],nums[k]};       //then this is definitely  == 0 so store them
+                    answer.push_back(temp);
+                    j++;        //j will be increased to next to get if more triplets == 0 
+                    k--;        // i will be decreased to get the more triplets == 0
+                    while(j<k && nums[j]==nums[j-1]){       //if previous and the next j position values are same then no need to check again as we have checked with all the possibilities witth that value
+                        j++;            //move j to next
+                    }
+                    while(j<k && nums[k] == nums[k+1]){     //same goes here
+                        k--;            //move k to next
+                    }
+                }
+            }
+            
+        }
+        return answer;
+    }
+};
+
 int main(){
     vector<int> nums = {1,2,3,4,5,-2,-1,-1,6,-5};
     bruteforce obj;
