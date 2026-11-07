@@ -8,7 +8,7 @@ class bruteforce{           //TC: O(N3) and SC:O(1)
         for(int i = 0 ; i<n; i++){
             for(int j=i; j<n; j++){
                 int sum = 0;
-                for(int k = i ; k<j ; k++){     //this includes the subarray from index i to j
+                for(int k = i ; k<=j ; k++){     //this includes the subarray from index i to j
                     sum+=nums[k];
                 }
                 maxSum = max(maxSum,sum);
@@ -42,10 +42,10 @@ class Optimal{              //TC: O(N) & SC: O(1)
     long long maxSubArray(vector<int> &nums){
         int n = nums.size();
         long long sum = 0;
-        long long maxSum = LONG_LONG_MIN;
+        long long maxSum = LLONG_MIN;
         for(int i = 0 ; i<n ; i++){
             sum += (long long) nums[i];
-            maxSum = max(maxSum,max);
+            maxSum = max(maxSum,sum);
             
             if(sum<0){
                 sum = 0;
