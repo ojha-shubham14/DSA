@@ -19,7 +19,7 @@ class bruteforce{           //TC: O(N3) and SC:O(1)
 };
 
 
-class Better{
+class Better{           //TC: 0(N2) and SC: O(1)
     public:
     int maxSubArray(vector<int> &nums){
         int n = nums.size();
@@ -30,6 +30,26 @@ class Better{
                 sum += nums[j];
             }
             maxSum = max(maxSum,sum);
+        }
+        return maxSum;
+    }
+};
+
+
+
+class Optimal{              //TC: O(N) & SC: O(1)
+    public:
+    long long maxSubArray(vector<int> &nums){
+        int n = nums.size();
+        long long sum = 0;
+        long long maxSum = LONG_LONG_MIN;
+        for(int i = 0 ; i<n ; i++){
+            sum += (long long) nums[i];
+            maxSum = max(maxSum,max);
+            
+            if(sum<0){
+                sum = 0;
+            }
         }
         return maxSum;
     }
