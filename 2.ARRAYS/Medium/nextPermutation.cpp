@@ -1,11 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class bruteforce{       //TC: O(NxN!)   SC:O(1) & not to use this in to write in Interview we can just verbaly say this
+class bruteforce{       //TC: O(NxN!)   SC:O(1) & not to use this in to write in Interview we can just verbally say this
     public:
 };
 
-class better{           //using STL property , not recommended to use in Interview we can just say verbaly
+class better{           //using STL property ,recommended to use in Interview we can just say verbally
     public:
     void nextPermutation(vector<int> & nums){
         next_permutation(nums.begin(),nums.end());
