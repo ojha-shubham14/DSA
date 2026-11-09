@@ -1,4 +1,4 @@
-#include<bits/stdc++>
+#include<bits/stdc++.h>
 using namespace std;
 
 class bruteforce{
@@ -15,11 +15,30 @@ class bruteforce{
                 
             }
             if(count>(n/3)){
-                if(answer.size()==0 || answer[0]!=nums[j]){
-                    answer.push_back(nums[j]);
-                }
+                if(find(answer.begin(), answer.end(), nums[i]) == answer.end()){        //this checks the entire Answer vector and only inserts if the element is not there
+                    answer.push_back(nums[i]);
+                }               
             }
         }
+        return answer;
     }
-    return answer;
+};
+
+
+class better{
+    public:
+    vector<int> majorityElements(vector<int> & nums){
+        vector<int> answer;
+        map<int,int> mp;
+        int n = nums.size();
+        for(int i = 0 ; i<n ; i++){
+            mp[nums[i]]++;
+        }
+        for(auto i : mp){
+            if(i.second > (n/3) && find(answer.begin(),answer.end(),i.first)== answer.end()){
+                answer.push_back(i.first);
+            }
+        }
+        return answer;
+    }
 };
