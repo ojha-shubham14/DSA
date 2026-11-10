@@ -24,3 +24,27 @@ class bruteforce{
         return {repeating,missing};
     }
 };
+
+
+class better{
+    public:
+    vector<int> repeating(vector<int> & nums){
+        int n = nums.size();
+        int repeating = -1;
+        int missing = -1;
+        map<int,int> mp;
+
+        for(int i = 0 ; i<n ; i++){
+            mp[nums[i]]++;
+        }
+        for(int i = 1; i<n ; i++){
+            if(mp[i]>1){
+                repeating = i;
+            }
+            if(mp[i]==0){
+                missing = i;
+            }
+        }
+        return {repeating,missing};
+    }
+};
