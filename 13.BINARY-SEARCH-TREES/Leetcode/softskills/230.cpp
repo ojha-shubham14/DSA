@@ -45,14 +45,14 @@ class BruteforceSolution{       //TC: 0(N log N)-----> log n for traversal and s
 
 
 
-class BetterSolution{
+class BetterSolution{           //inorder already sorts in ascending order so no need to sort it again
     public:
-    int kthSmallest(TreeNode* root, int k){
+    int kthSmallest(TreeNode* root, int k){         //TC:O(N) iterating each elements and the SC: O(N)
         vector<int> nums;
 
         inorder(root,nums);
 
-        return arr[k-1];
+        return nums[k-1];
     }
 
     void inorder(TreeNode* root, vector<int> & nums){
