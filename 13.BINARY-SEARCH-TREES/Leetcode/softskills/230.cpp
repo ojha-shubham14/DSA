@@ -42,3 +42,26 @@ class BruteforceSolution{       //TC: 0(N log N)-----> log n for traversal and s
         inorder(root->right, arr);
     }
 };
+
+
+
+class BetterSolution{
+    public:
+    int kthSmallest(TreeNode* root, int k){
+        vector<int> nums;
+
+        inorder(root,nums);
+
+        return arr[k-1];
+    }
+
+    void inorder(TreeNode* root, vector<int> & nums){
+        if(root==NULL) return;
+
+        inorder(root->left,nums);
+
+        nums.push_back(root->val);
+
+        inorder(root->right, nums);
+    }
+};
