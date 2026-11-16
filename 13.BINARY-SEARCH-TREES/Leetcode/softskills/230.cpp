@@ -65,3 +65,32 @@ class BetterSolution{           //inorder already sorts in ascending order so no
         inorder(root->right, nums);
     }
 };
+
+
+class OptimalSolution{
+    public:
+    int count =0 ;
+    int ans = -1;
+    int kthSmallest(TreeNode* root , int k){
+        inorder(root,k);
+        return ans;
+    }
+    void inorder(TreeNode* root , int k){
+        if(root==NULL) return;
+        //visit left subtree
+        inorder(root->left,k);
+
+        // Stop if kth element is already found
+        if(count >= k) return;
+
+            //visit current node
+            count++;
+        //visit the root
+        if(count==k){
+            ans=root->val;
+            return;
+        }
+        //visit right subtree
+        inorder(root->right,k);
+    }
+};
