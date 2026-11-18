@@ -50,7 +50,7 @@ class bruteforce2{
 };
 
 
-class better{
+class better{                                   //TC: O(N)   SC: O(K)
     public:
     bool isAnagram(string s, string t){
         if(s.size()!=t.size()){
@@ -80,10 +80,28 @@ class better{
 };
 
 
-class optimal{
+class optimal{                                      //TC:O(N) SC: O(1)
     public:
-    bool isAnagram(string s , string t){
-        
+    bool isAnagram(string s , string t){            //we know only the small alphabets will be there so we can make a array of 26 size why to introduce unordered map in this.
+        if(s.size()!=t.size()){
+            return false;
+        }        
+
+        int n = s.size();
+        vector<int> store(26,0);
+
+        for(int i = 0; i<n ; i++){
+            store[s[i] - 'a']++;                    //push back will not be used as we have already made vector of size 26 so push_back will result in overflow
+            store[t[i] - 'a']--;
+        }
+
+        for(auto a : store){
+            if(a!=0){
+                return false;
+            }
+        }
+        return true;
+
     }
 };
 
