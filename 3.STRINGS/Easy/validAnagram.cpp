@@ -49,6 +49,44 @@ class bruteforce2{
     }
 };
 
+
+class better{
+    public:
+    bool isAnagram(string s, string t){
+        if(s.size()!=t.size()){
+            return false;
+        }
+
+        unordered_map<char,int> mp;
+
+        int n = s.size();
+
+        for(int i = 0 ; i<n ; i++){     //add s[i] to the map so that it can store the count of each characters with the character in the Unordered map.
+            mp[s[i]]++;
+        }
+
+        for(int i =0; i<n; i++){        //remove t[i] from the unordered map which s[i] has added that is, if same elements are present then it will become 0 by subtracting each other
+            mp[t[i]]--;
+        }
+
+        for(auto it: mp){
+            if(it.second!=0){           //if all second iterators are zero then means both the string contained equal number of characters and is anagram
+                return false;
+            }
+        }
+
+        return true;                //else it will be true
+    }
+};
+
+
+class optimal{
+    public:
+    bool isAnagram(string s , string t){
+        
+    }
+};
+
 int main(){
     string s = "HEART";
     string t = "EARTH";
