@@ -104,3 +104,47 @@ class BetterSolution{
         return solve(n-1,nums,dp);
     }
 };
+
+
+class OptimalSolution{
+    public:
+    int Rob(vector<int> & nums){
+
+        int n = nums.size();
+
+        //edge case : if there is only one house then rob that house and no need to take tension for adjacent house
+        if(n==1) return nums[0];
+
+        //create a DP array of size n and initialize with 0
+
+        vector<int> dp(n,0);
+
+        //BASE CASE 1 : if there is only 1 house then store it in the dp array 
+        dp[0]= nums[0];
+
+        //BASE CASE 2: if there is 2 house then compare which has more money then rob  the house.
+        dp[1] = max(nums[0],nums[1]);
+
+        //we need to start form 3rd house as we have already solved and calculated for house 1 and 2
+
+        for(int i = 2; i<n; i++){
+            int pick = nums[i] + dp[i-2];
+
+            int notPick = dp[i-1];
+
+            dp[i] = max(pick , notPick);
+        }
+        //return the maximum money robbed from all houses, because :
+        /*
+        DP	Meaning
+        dp[0]	Maximum money from house 0
+        dp[1]	Maximum money from houses 0–1
+        dp[2]	Maximum money from houses 0–2
+        dp[3]	Maximum money from houses 0–3
+        dp[4]	Maximum money from houses 0–4   
+        */
+        return dp[n-1];
+
+
+    }
+};
