@@ -30,6 +30,44 @@ class Better{
     }
 };
 
+
+class optimal{
+    public:
+    vector<int> topElements(vector<int> & nums , int k){
+        int n = nums.size();
+
+        //creating map to store the frequency of each elements
+        unordered_map<int,int> mapp;
+        for(auto it: nums){
+            mapp[it]++;
+        }
+
+        //now add these to the minHeap that is priorityQueue in order {frequency,value}
+        priority_queue<
+            pair<int,int> , 
+            vector<pair<int,int>> , 
+            greater<pair<int,int>>
+            > minHeap;
+            
+        for(auto it: mapp){
+            minHeap.push({it.second,it.first});
+
+            //if minHeap size is increased more than K then pop the top (the top contains the minimum value i.e, min frequency one element)
+            if(minHeap.size()>k){
+                minHeap.pop();
+            }
+        }
+
+        //now extract the sorted form of the elements into the result vector
+        vector<int> answer;
+        while(!minHeap.empty()){
+            answer.push_back(minHeap.top().second);
+            minHeap.pop();
+        }
+
+        return answer;
+    }
+};
 int main(){
     Better obj;
     vector<int> inp = {1,1,1,3,3,2,2,2,2,4,4};
