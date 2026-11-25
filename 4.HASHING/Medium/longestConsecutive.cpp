@@ -56,3 +56,25 @@ class Better{
 };
 
 
+class optimal{
+    public:
+    int longestConsecutive(vector<int> & nums){
+        int n = nums.size();
+
+        //using Unordered_set which won't have duplicates and insertion and finding is O(1) where as for set and multiset it is O(log n)
+        unordered_set<int> st(nums.begin(),nums.end());         //storing every non repetative elements
+        int longest = 0;
+        for(auto it: st){
+            if(st.find(it-1)==st.end()){                    //that means if it-1 is not there in the set then that means no other element is smaller than this element
+                int currentElement = it;
+                int count = 1;
+                while(st.find(it + 1)!= st.end()){          //search if the current immidiate next number to current is present or not, if it is present then that is our next number so current++
+                    currentElement++;
+                    count++;
+                }
+                longest = max(longest,count);               //store the maximum current count to the longest
+            }   
+        }
+        return longest;
+    }
+};
