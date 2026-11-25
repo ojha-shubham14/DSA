@@ -68,7 +68,7 @@ class optimal{
             if(st.find(it-1)==st.end()){                    //that means if it-1 is not there in the set then that means no other element is smaller than this element
                 int currentElement = it;
                 int count = 1;
-                while(st.find(it + 1)!= st.end()){          //search if the current immidiate next number to current is present or not, if it is present then that is our next number so current++
+                while(st.find(currentElement + 1)!= st.end()){          //search if the current immidiate next number to current is present or not, if it is present then that is our next number so current++
                     currentElement++;
                     count++;
                 }
