@@ -109,3 +109,46 @@ class Better1{          //USING DIVISON OPERATOR--> which is not allowed in leet
         return count ;      ----> which is 4
     }
 */
+
+
+
+class Better2{
+    public:
+    vector<int> productExceptSelf (vector<int> & nums){
+
+        int n = nums.size();
+
+        //we will use 2 array leftProduct and Right product to store the product of the number after each index change 
+        vector<int> left(n);
+        vector<int> right(n);
+
+        //left side of nums[0] is nothing so we store 1 and Right side of nums[n-1] has nothing so store 1
+        
+        left[0] = 1;
+        right[n-1] = 1;
+
+        //filling left array 
+        for(int i =1 ; i<n ; i++){          //starts from i =1 because we have already stored left[0]
+
+            left[i] = left[i-1] * nums[i-1];
+        }
+
+        //filling right array 
+        for(int i = n-2 ; i>0 ; i--){
+            
+            right[i] = right[i+1] * nums[i+1];
+        }
+
+        //getting the final answer ready for that multiply each index value of left and right with each other at answer[i]
+
+        vector<int> answer(n);
+        
+        for(int i=0; i<n ; i++){
+            
+            answer[i] = left[i] * right[i];
+        }
+
+        return answer;
+
+    }
+};
