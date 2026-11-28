@@ -23,3 +23,89 @@ class Bruteforce{       //TC: O(n2) and SC: O(1)
         return answer;
     }
 };
+
+
+
+class Better1{          //USING DIVISON OPERATOR--> which is not allowed in leetcode i.e, follow up question is given
+    public:
+
+    vector<int> productExceptSelf(vector<int> &nums){
+        
+        int n = nums.size();
+
+        //we will need 2 variable 
+        int productWithoutZeroes = 1;
+        int ZeroCounter =0;
+
+        //getting both variables values
+        for(int i =0; i<n ; i++){
+            if(nums[i]==0){
+                ZeroCounter ++;
+            }
+            else{
+                productWithoutZeroes *= nums[i];
+            }
+        }
+
+        vector<int> answer(n);
+
+        for(int i =0; i<n ; i++){
+
+            if(nums[i]!=0){
+                if(ZeroCounter>0){
+                    answer[i]=0;
+                }
+                else{
+                    answer[i] = productWithoutZeroes/nums[i];
+                }
+            }
+
+            else{       //if nums[i] == 0 that means already atleast 1 zero is there
+                
+                if(ZeroCounter>1){          //1 zero is already there that is itself nums[i]
+
+                    answer[i] = 0;
+                }
+                else{
+                    answer[i] = productWithoutZeroes;       //agar ek he zero tha and we are on it then except that zero kitna hoga total at that index in answer[i] that is productWithout zeroes
+                }
+            }
+        }
+
+        return answer;
+    }
+};
+
+/*Instead of using "/" operator we can use at that time user defined divide function
+
+    int divide (int dividend , int divisor){
+        int count = 0;
+        while(dividend>=divisor){       // dividend = 20 and divisor = 4
+            dividend -= divisor;
+            count ++;
+        }
+        
+        return count ;      ----> which is 4
+    }
+    NOTE: This won't work for if either of dividend or the divisor are negative integer
+
+    int divide (int dividend , int divisor){
+        int count = 0;
+
+        bool negative = (dividend<0) != (divisor <0);
+
+        dividend = abs(dividend);       //convert to positive
+        divisor = abs(divisor);         //convert to positive
+
+        while(dividend>=divisor){       // dividend = 20 and divisor = 4
+            dividend -= divisor;
+            count ++;
+        }
+
+        if(negative){       //if any of the one from dividend and divisor is -ve integer then bool Negative will be True and resultant answer will also be  -ve in Integer and if both are actually -ve or +ve then bool Negative will become false
+            count = -count;
+        }
+
+        return count ;      ----> which is 4
+    }
+*/
