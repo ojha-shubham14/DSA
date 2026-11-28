@@ -114,7 +114,7 @@ class Better1{          //USING DIVISON OPERATOR--> which is not allowed in leet
 
 class Better2{
     public:
-    vector<int> productExceptSelf (vector<int> & nums){
+    vector<int> productExceptSelf (vector<int> & nums){         //TC: O(n)   SC: O(2n)
 
         int n = nums.size();
 
@@ -142,7 +142,7 @@ class Better2{
         //getting the final answer ready for that multiply each index value of left and right with each other at answer[i]
 
         vector<int> answer(n);
-        
+
         for(int i=0; i<n ; i++){
             
             answer[i] = left[i] * right[i];
@@ -150,5 +150,37 @@ class Better2{
 
         return answer;
 
+    }
+};
+
+
+
+class optimal{                  //TC: O(n) and SC:O(1)
+    public: 
+    vector<int> productExceptSelf(vector<int> & nums){
+
+        int n = nums.size();
+
+        //storing left prefix in result and right prefix in variable so the space complexity will become O(1)
+
+        //storing left prefix in answer array
+        vector<int> answer(n);
+        answer[0] = 1;           //as we know left[0] = 1 as there is no element in the left
+        int rightSuffix = 1;     //as we know right(n-1) = 1 as there is no element on the right of the array end
+
+        for(int i =1 ; i<n ; i++){
+            answer[i] = answer[i-1] * nums[i-1];
+        }
+
+
+        //now getting the final answer
+        for(int i=n-1; i>0; i--){           //starting from the right as we have to multiply each value of the right to the answer(which is actually conataining leftPrefix) which is there at the rightmost or the end of the array 
+
+            answer[i] = answer[i] * rightSuffix;
+            rightSuffix *= nums[i];             //multiplying right suffix value with nums[i] as each time the array iterates form the end
+
+        }
+
+        return answer;
     }
 };
